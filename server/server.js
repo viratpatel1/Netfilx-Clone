@@ -24,4 +24,9 @@ app.use("/auth/user", UserUpdates);
 app.use("/auth/movies", UserMovies);
 app.use("/auth/lists", UserLists);
 
+app.use("/", (req, res) =>
+{
+    res.send("Netflix server Started")
+})
+
 app.listen(PORT, () => console.log(`Server is at Port ${PORT}`));

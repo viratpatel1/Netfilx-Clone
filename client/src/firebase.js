@@ -3,7 +3,7 @@ import firebase from "firebase";
 // dotenv.config();
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCo0dBSwdNEFbxYUNdnpViL4zZmuupCBI8",
+    apiKey: process.env.API_KEY,
     authDomain: "netflix-bb36a.firebaseapp.com",
     projectId: "netflix-bb36a",
     storageBucket: "netflix-bb36a.appspot.com",
