@@ -66,6 +66,14 @@
           background-color: var(--main-color);
           border-radius: 5px;
         }
+        .icon {
+          @include tablet {
+            display: none;
+          }
+          @include mobile {
+            display: none;
+          }
+        }
         span {
           padding: 10px;
           cursor: pointer;

@@ -5,7 +5,8 @@ import { login } from '../AuthContext/ApiCalls';
 import { AuthContext } from '../AuthContext/AuthContext';
 import "../CSS/Login.scss";
 
-const Local = "http://localhost:4000/";
+// const Local = "http://localhost:4000/";
+const Local = "https://netflixs-clone.herokuapp.com/";
 
 const Login = () =>
 {

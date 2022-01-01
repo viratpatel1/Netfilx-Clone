@@ -47,16 +47,16 @@ export default function Sidebar() {
                 Users
               </li>
             </Link> */}
-            <Link to="/movie" className="link">
-              <li className="sidebarListItem">
-                <PlayCircleOutline className="sidebarIcon" />
-                Movies
-              </li>
-            </Link>
             <Link to="/lists" className="link">
               <li className="sidebarListItem">
                 <List className="sidebarIcon" />
                 Lists
+              </li>
+            </Link>
+            <Link to="/movie" className="link">
+              <li className="sidebarListItem">
+                <PlayCircleOutline className="sidebarIcon" />
+                Movies
               </li>
             </Link>
             {/* <li className="sidebarListItem">

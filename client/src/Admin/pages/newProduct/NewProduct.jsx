@@ -4,6 +4,7 @@ import { createMovies } from "../../../Context/MovieContext/MovieApiCalls";
 import { MovieContext } from "../../../Context/MovieContext/MovieContext";
 import storage from "../../../firebase";
 import "./newProduct.css";
+import { Link } from "react-router-dom";
 
 export default function NewProduct() {
   const [movie, setMovie] = useState({});
@@ -13,6 +14,7 @@ export default function NewProduct() {
   const [trailer, setTrailer] = useState(null);
   const [video, setVideo] = useState(null);
   const [uploaded, setUploaded] = useState(0);
+  const [per, setPer] = useState();
 
   const { dispatch } = useContext(MovieContext);
 
@@ -37,6 +39,7 @@ export default function NewProduct() {
         (snapshot) => {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setPer(progress);
           console.log("Uploaded is" + progress + " % is done");
         },
         (err) => {
@@ -177,11 +180,20 @@ export default function NewProduct() {
         </div>
         {uploaded === 5 ? (
           <button className="addProductButton" onClick={handleSubmit}>
-            Create Now
+            <Link
+              style={{
+                textDecoration: "none",
+                listStyle: "none",
+                color: "white",
+              }}
+              to="/movie"
+            >
+              Create Now
+            </Link>
           </button>
         ) : (
           <button className="addProductButton" onClick={handleUpload}>
-            Upload
+            Upload {per ? per : 0} %
           </button>
         )}
       </form>

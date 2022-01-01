@@ -3,7 +3,8 @@ import { Visibility } from "@material-ui/icons";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const Local = "http://localhost:4000/";
+// const Local = "http://localhost:4000/";
+const Local = "https://netflixs-clone.herokuapp.com/";
 
 export default function WidgetSm() {
   const [newUsers, setNewUsers] = useState([]);

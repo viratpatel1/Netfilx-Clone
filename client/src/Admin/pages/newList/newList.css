@@ -42,3 +42,7 @@
   height: 30px;
   align-self: center;
 }
+
+.formRight select {
+  height: 160px;
+}

@@ -9,7 +9,7 @@ import { ListContext } from "../../../Context/ListContext/ListContext";
 export default function List() {
   const { lists, dispatch } = useContext(ListContext);
   const { id } = useParams();
-  console.log("Listid ", id);
+  // console.log("Listid ", id);
 
   return (
     <div className="product">
@@ -49,7 +49,7 @@ export default function List() {
                 </div>
               </div>
 
-              <div className="productBottom">
+              {/* <div className="productBottom">
                 <form className="productForm">
                   <div className="productFormLeft">
                     <label>List Title</label>
@@ -63,7 +63,7 @@ export default function List() {
                     <button className="productButton">Update</button>
                   </div>
                 </form>
-              </div>
+              </div> */}
             </>
           )
       )}

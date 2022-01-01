@@ -9,7 +9,9 @@ import { useEffect, useMemo, useState } from "react";
 import Navbarr from "../../../Componends/AdminNav";
 import Sidebar from "../../components/sidebar/Sidebar";
 
-const Local = "http://localhost:4000/";
+// const Local = "http://localhost:4000/";
+const Local = "https://netflixs-clone.herokuapp.com/";
+
 export default function Homes() {
   const Months = useMemo(
     () => [

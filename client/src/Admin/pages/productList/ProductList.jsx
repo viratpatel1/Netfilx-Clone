@@ -1,7 +1,7 @@
 import "./productList.css";
 import { DataGrid } from "@material-ui/data-grid";
 import { DeleteOutline } from "@material-ui/icons";
-import { productRows } from "../../dummyData";
+// import { productRows } from "../../dummyData";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useContext, useEffect } from "react";
@@ -51,10 +51,13 @@ export default function ProductList() {
       renderCell: (params) => {
         return (
           <>
-            <Link
+            {/* <Link
               to={{ movie: params.row, pathname: "/product/" + params.row._id }}
             >
               <button className="productListEdit">Edit</button>
+            </Link> */}
+            <Link to="/newproduct">
+              <button className="productAddButton">Create</button>
             </Link>
 
             <DeleteOutline
@@ -71,10 +74,10 @@ export default function ProductList() {
     <div className="productList">
       <DataGrid
         rows={movies}
-        disableSelectionOnClick
+        // disableSelectionOnClick
         columns={columns}
         pageSize={8}
-        checkboxSelection
+        // checkboxSelection
         getRowId={(r) => r._id}
       />
     </div>

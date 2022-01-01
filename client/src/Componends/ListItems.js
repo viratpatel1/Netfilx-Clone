@@ -4,7 +4,9 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import "../CSS/ListItems.scss";
 
-const Local = "http://localhost:4000/";
+// const Local = "http://localhost:4000/";
+const Local = "https://netflixs-clone.herokuapp.com/";
+
 
 const ListItems = ({ index, item }) =>
 {
@@ -27,7 +29,7 @@ const ListItems = ({ index, item }) =>
                     }
                 );
                 setMovie(res.data);
-                // console.log(res)
+                console.log("res ", res)
 
             } catch (error)
             {
@@ -39,30 +41,32 @@ const ListItems = ({ index, item }) =>
 
 
     return (
-        <Link to={{ pathname: "/watch", movie }}>
+        <Link to={{ pathname: "/watch/" + movie?._id }}>
             <div className='listItem' style={{ left: isHovered && index * 225 - 50 + index * 2.5 }} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                <img src={movie.img} />
+                <img src={movie?.img} />
                 {isHovered && (
                     <>
-                        <video autoPlay={true} loop data-reactid=".0.1.0.0">
-                            <source src="/video/test.mp4" data-reactid=".0.1.0.0.0" type='video/mp4' />
-                        </video>
+                        {/* <video autoPlay={true} loop data-reactid=".0.1.0.0">
+                            <source src={movie.trailer} data-reactid=".0.1.0.0.0" type='video/mp4' />
+                        </video> */}
+                        <video src={movie?.trailer} autoPlay={true} progress loop />
+
                         <div className='movieInfo'>
-                            <div className='icons'>
+                            {/* <div className='icons'>
                                 <PlayArrow className='icon' />
                                 <Add className='icon' />
                                 <ThumbUpOutlined className='icon' />
                                 <ThumbDownOutlined className='icon' />
-                            </div>
+                            </div> */}
                             <div className='movieInfoTop'>
-                                <span>{movie.duration}</span>
-                                <span className='limit'>+{movie.limit}</span>
-                                <span>{movie.year}</span>
+                                <span>{movie?.duration}</span>
+                                <span className='limit'>+{movie?.limit}</span>
+                                <span>{movie?.year}</span>
                             </div>
                             <div className='desc'>
-                                {movie.desc}
+                                {movie?.desc}
                             </div>
-                            <div className='genre'>{movie.genre}</div>
+                            <div className='genre'>{movie?.genre}</div>
                         </div>
                     </>
                 )}

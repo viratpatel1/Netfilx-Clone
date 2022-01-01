@@ -39,7 +39,7 @@ function App()
 
   const { user } = useContext(AuthContext);
 
-  console.log("data ", user);
+  // console.log("data ", user);
 
   return (
     <div className="App">
@@ -72,9 +72,9 @@ function App()
           {/* <Route path="/" element={user ? <Home /> : <Navigate replace to="/login" />} /> */}
           <Route path="/register" element={!user ? <Register /> : <Navigate replace to="/" />} />
           <Route path="/login" element={!user ? <Login /> : <Navigate replace to="/" />} />
-          <Route path="/movies" element={<Home type="movies" />} />
+          <Route path="/movies" element={<Home type="movie" />} />
           <Route path="/series" element={<Home type="series" />} />
-          <Route path="/watch" element={<Watch />} />
+          <Route path="/watch/:id" element={<Watch />} />
         </Routes>
       </Router>
 

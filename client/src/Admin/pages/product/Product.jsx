@@ -9,7 +9,7 @@ import { MovieContext } from "../../../Context/MovieContext/MovieContext";
 export default function Product() {
   const { movies, dispatch } = useContext(MovieContext);
   const { id } = useParams();
-  console.log("id ", id);
+  // console.log("id ", id);
 
   return (
     <div className="product">
@@ -53,7 +53,7 @@ export default function Product() {
                 </div>
               </div>
 
-              <div className="productBottom">
+              {/* <div className="productBottom">
                 <form className="productForm">
                   <div className="productFormLeft">
                     <label>Movie Title</label>
@@ -84,7 +84,7 @@ export default function Product() {
                     <button className="productButton">Update</button>
                   </div>
                 </form>
-              </div>
+              </div> */}
             </>
           )
       )}

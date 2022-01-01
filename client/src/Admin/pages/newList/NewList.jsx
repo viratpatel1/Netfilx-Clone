@@ -42,7 +42,7 @@ export default function NewList() {
     setList({ ...list, [e.target.name]: value });
   };
 
-  console.log("l ", list);
+  // console.log("l ", list);
 
   return (
     <div className="newProduct">

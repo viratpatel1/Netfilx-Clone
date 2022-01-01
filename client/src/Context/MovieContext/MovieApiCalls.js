@@ -1,7 +1,9 @@
 import axios from "axios";
 import { createMovieFailed, createMovieStart, createMovieSuccess, deleteMovieFailed, deleteMovieStart, deletetMovieSuccess, getMovieFailed, getMovieStart, getMovieSuccess } from "./MovieAction"
 
-const Local = "http://localhost:4000/";
+// const Local = "http://localhost:4000/";
+const Local = "https://netflixs-clone.herokuapp.com/";
+
 
 
 //To fetch the movies

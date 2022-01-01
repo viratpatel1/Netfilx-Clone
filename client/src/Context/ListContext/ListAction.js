@@ -38,10 +38,10 @@ export const createListStart = () =>
     type: "CREATE_LIST_START",
 });
 
-export const createListSuccess = (list) =>
+export const createListSuccess = (lists) =>
 ({
     type: "CREATE_LIST_SUCCESS",
-    payload: list,
+    payload: lists,
 });
 
 export const createListFailed = () =>

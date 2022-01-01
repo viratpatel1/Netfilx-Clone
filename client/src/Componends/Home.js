@@ -6,7 +6,9 @@ import axios from "axios";
 import List from './List';
 import Navbar from './Navbar';
 
-const Local = "http://localhost:4000/";
+// const Local = "http://localhost:4000/";
+const Local = "https://netflixs-clone.herokuapp.com/";
+
 
 
 const Home = ({ type }) =>

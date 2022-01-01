@@ -1,7 +1,9 @@
 import axios from "axios";
 import { createListFailed, createListStart, createListSuccess, deleteListFailed, deleteListStart, deletetListSuccess, getListFailed, getListStart, getListSuccess } from "./ListAction";
 
-const Local = "http://localhost:4000/";
+// const Local = "http://localhost:4000/";
+const Local = "https://netflixs-clone.herokuapp.com/";
+
 
 
 //To fetch the movies
@@ -49,6 +51,7 @@ export const deleteList = async (id, dispatch) =>
 //To create the Movie
 export const createList = async (list, dispatch) =>
 {
+    console.log("list ", list)
     dispatch(createListStart());
     try
     {
@@ -60,7 +63,7 @@ export const createList = async (list, dispatch) =>
             }
         );
         dispatch(createListSuccess(res.data));
-        // console.log("rd", res.data)
+        // console.log("rd", res.data);
     } catch (error)
     {
         dispatch(createListFailed());

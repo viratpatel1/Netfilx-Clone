@@ -2,15 +2,17 @@ import { InfoOutlined, PlayArrow, SignalCellularNullRounded } from "@material-ui
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../CSS/Features.scss";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 
-const Local = "http://localhost:4000/";
+// const Local = "http://localhost:4000/";
+const Local = "https://netflixs-clone.herokuapp.com/";
+
 
 const Features = ({ type, setGenre }) =>
 {
     const [content, setContent] = useState({});
-    // const history = useNavigate();
+    const history = useNavigate();
 
     // const data = JSON.parse(localStorage.getItem("user"));
 
@@ -28,6 +30,7 @@ const Features = ({ type, setGenre }) =>
                     }
                 );
                 setContent(res.data[0]);
+                // console.log("r ", res)
             } catch (error)
             {
                 console.log(error)
@@ -36,23 +39,12 @@ const Features = ({ type, setGenre }) =>
         getRandomContent();
     }, [type]);
 
-    // console.log("od ", data);
-    // useEffect(() =>
-    // {
-    //     if (data)
-    //     {
-    //         history("/")
-    //     } else
-    //     {
-    //         history("/login")
-    //     }
-    // }, [data])
 
 
 
     return (
         <div className="features">
-            {type && (
+            {/* {type && (
                 <div className="category">
                     <span>{type === "movies" ? "Movies" : "Series"}</span>
                     <select name="genre" id="genre" onChange={(e) => setGenre(e.target.value)}>
@@ -73,7 +65,7 @@ const Features = ({ type, setGenre }) =>
 
                     </select>
                 </div>
-            )}
+            )} */}
             <img
                 src={content.img}
                 alt="Home Banner Img"
@@ -86,12 +78,14 @@ const Features = ({ type, setGenre }) =>
                 <div className="buttons">
                     <button className="play">
                         <PlayArrow />
-                        <span>Play</span>
+                        <Link style={{ listStyle: "none", textDecoration: "none", color: "black" }} to={{ pathname: "/watch/" + content._id }}>
+                            <span>Play</span>
+                        </Link>
                     </button>
-                    <button className="more">
+                    {/* <button className="more">
                         <InfoOutlined />
                         <span>Info</span>
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </div>

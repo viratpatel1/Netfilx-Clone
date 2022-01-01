@@ -37,8 +37,11 @@ export default function ListList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={{ pathname: "/list/" + params.row._id }}>
+            {/* <Link to={{ pathname: "/list/" + params.row._id }}>
               <button className="productListEdit">Edit</button>
+            </Link> */}
+            <Link to="/newlists">
+              <button className="productAddButton">Create</button>
             </Link>
 
             <DeleteOutline
@@ -55,10 +58,10 @@ export default function ListList() {
     <div className="productList">
       <DataGrid
         rows={lists}
-        disableSelectionOnClick
+        // disableSelectionOnClick
         columns={columns}
         pageSize={8}
-        checkboxSelection
+        // checkboxSelection
         getRowId={(r) => r._id}
       />
     </div>

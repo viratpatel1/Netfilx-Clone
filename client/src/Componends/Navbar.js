@@ -42,18 +42,18 @@ const Navbar = () =>
                     <Link to="/movies" className='link'>
                         <span className='navbarmainlink'>Movies</span>
                     </Link>
-                    <span>New and Popular</span>
-                    <span>My List</span>
+                    {/* <span>New and Popular</span>
+                    <span>My List</span> */}
                 </div>
                 <div className="right">
-                    <Search className='icon' />
+                    {/* <Search className='icon' />
                     <span>KIDs</span>
-                    <NotificationsActive className='icon' />
-                    <img src='https://loremflickr.com/cache/resized/65535_51399653356_88b3eb63cb_z_640_360_nofilter.jpg' alt='Img' />
+                    <NotificationsActive className='icon' /> */}
                     <div className='profile'>
+                        <img src='https://loremflickr.com/cache/resized/65535_51399653356_88b3eb63cb_z_640_360_nofilter.jpg' alt='Img' />
                         <ArrowDropDown className='icon' />
                         <div className='options'>
-                            <span>Setting</span>
+                            {/* <span>Setting</span> */}
                             <span onClick={() =>
                             {
                                 dispatch(Logout())
